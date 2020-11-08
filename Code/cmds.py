@@ -59,8 +59,8 @@ class Cmds(Cog):
 
         await ctx.send(embed=embed)
 
-    # administrator command
     @commands.command(name="echo", description="使用 openBot 傳送訊息 | /echo [內容]")
+    @commands.permissions(administrator=True)
     async def echo(self, ctx, *msg):
         if ctx.message.author.guild_permissions.administrator:
             if str(msg) == "()":
